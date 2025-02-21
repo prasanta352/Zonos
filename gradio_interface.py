@@ -416,4 +416,6 @@ def build_interface():
 if __name__ == "__main__":
     demo = build_interface()
     share = getenv("GRADIO_SHARE", "False").lower() in ("true", "1", "t")
-    demo.launch(server_name="0.0.0.0", server_port=7860, share=share)
+    server_name = getenv("ZONOS_HOST", "0.0.0.0")
+    demo.launch(server_name=server_name, share=share)
+    # demo.launch(server_name="0.0.0.0", server_port=7860, share=share)
